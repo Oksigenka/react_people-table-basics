@@ -18,7 +18,9 @@ export const App = () => (
         <div className="navbar-brand">
           <NavLink
             className={({ isActive }) => {
-              return classNames('navbar-item', { 'has-background-grey-lighter': isActive });
+              return classNames('navbar-item', {
+                'has-background-grey-lighter': isActive,
+              });
             }}
             to="/"
           >
@@ -27,7 +29,9 @@ export const App = () => (
 
           <NavLink
             className={({ isActive }) => {
-              return classNames('navbar-item', { 'has-background-grey-lighter': isActive });
+              return classNames('navbar-item', {
+                'has-background-grey-lighter': isActive,
+              });
             }}
             to="/people"
           >
@@ -40,18 +44,15 @@ export const App = () => (
     <main className="section">
       <div className="container">
         <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/home" element={<RedirectHome />} />
-            <Route path="people">
-              <Route index element={<PeoplePage />} />
-              <Route path=":slug" element={<PeoplePage />} />
-            </Route>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/home" element={<RedirectHome />} />
+          <Route path="people">
+            <Route index element={<PeoplePage />} />
+            <Route path=":slug" element={<PeoplePage />} />
+          </Route>
 
-            <Route
-              path="*"
-              element={<h1 className="title">Page not found</h1>}
-            />
-          </Routes>
+          <Route path="*" element={<h1 className="title">Page not found</h1>} />
+        </Routes>
       </div>
     </main>
   </div>
